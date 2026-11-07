@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ludo Board Game | Idea By Azmat Ali</title>
+  <meta name="description" content="Free, ad-free Ludo for 1 to 4 players. Red, green, yellow and blue, with dice animation and sound effects. Idea by Azmat Ali.">
+  <meta name="theme-color" content="#1b1f4b">
+
+  <!-- Browser tab icon (top-left) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / link preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ludo Board Game">
+  <meta property="og:title" content="Ludo Board Game | Idea By Azmat Ali">
+  <meta property="og:description" content="Free, ad-free Ludo for 1 to 4 players with dice animation and sound. Idea by Azmat Ali.">
+  <meta property="og:image" content="https://ludo-board-game.netlify.app/ludo1.png">
+  <meta property="og:image:width" content="823">
+  <meta property="og:image:height" content="842">
+  <meta property="og:image:alt" content="Ludo board in red, green, yellow and blue">
+  <meta property="og:url" content="https://ludo-board-game.netlify.app/">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ludo Board Game | Idea By Azmat Ali">
+  <meta name="twitter:description" content="Free, ad-free Ludo for 1 to 4 players with dice animation and sound.">
+  <meta name="twitter:image" content="https://ludo-board-game.netlify.app/ludo1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <section id="setup" class="screen">
+      <header class="hero">
+        <h1>LUDO</h1>
+        <p>Race your four tokens home. Roll a 6 to leave the yard.</p>
+      </header>
+      <div class="card">
+        <h2>How many players?</h2>
+        <div class="count-row">
+          <button data-count="1">1 Player<small>vs 3 computers</small></button>
+          <button data-count="2">2 Players</button>
+          <button data-count="3">3 Players</button>
+          <button data-count="4">4 Players</button>
+        </div>
+        <h2>Seats</h2>
+        <p class="hint">Tap a seat to switch between Human, Computer, and Off.</p>
+        <div id="seat-rows" class="seat-rows"></div>
+        <button id="start-btn" class="primary big">Start game</button>
+      </div>
+    </section>
+
+    <section id="game" class="screen" hidden>
+      <div class="layout">
+        <div class="stage">
+          <div id="turn-banner" class="turn-banner" aria-live="polite">
+            <span class="turn-dot"></span>
+            <span id="turn-text">Get ready</span>
+            <span id="turn-kind"></span>
+          </div>
+          <div class="board-wrap">
+            <div id="board" class="board" aria-label="Ludo board"></div>
+          </div>
+        </div>
+        <aside class="side">
+          <div class="card dice-card">
+            <div id="die" class="die" aria-label="Dice"></div>
+            <div class="dice-actions">
+              <button id="roll-btn" class="primary big" disabled>Roll dice</button>
+              <p id="msg" class="msg" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Players</h2>
+            <ul id="players" class="players"></ul>
+          </div>
+          <div class="row">
+            <button id="mute-btn" class="ghost">Sound on</button>
+            <button id="new-btn" class="ghost">New game</button>
+          </div>
+          <p class="hint">Space = roll. Click a glowing token to move it.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="winner" class="overlay" hidden>
+    <div class="card win-card">
+      <h2>Game over</h2>
+      <ol id="ranking" class="ranking"></ol>
+      <button id="again-btn" class="primary big">Play again</button>
+    </div>
+  </div>
+
+  <footer class="credit" aria-label="Credit">Idea By: <span>Azmat Ali</span></footer>
+
+  <script src="js/logic.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
