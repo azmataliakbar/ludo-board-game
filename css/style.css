@@ -29,13 +29,14 @@ main { padding: 16px; max-width: 1100px; margin: 0 auto; }
 
 .credit {
   position: fixed;
-  left: 50%;
+  left: 12px;
   bottom: calc(10px + env(safe-area-inset-bottom));
-  transform: translateX(-50%);
   z-index: 20;
   pointer-events: none;
   width: max-content;
-  max-width: calc(100vw - 2 * 64px);   /* keeps clear of both bottom corners */
+  max-width: calc(100vw - 170px);      /* stops short of Netlify's badge in the bottom-right corner */
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: "Great Vibes", "Brush Script MT", cursive;
   font-size: clamp(20px, 5.6vw, 32px);
   line-height: 1.2;
